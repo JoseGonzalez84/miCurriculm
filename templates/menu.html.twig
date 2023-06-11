@@ -1,0 +1,81 @@
+{# templates/menu.html.twig #}
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="http://localhost:8000">
+            <h2>José González</h2>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="{{ path('app_training') }}">
+                Formación
+            </a>
+            <a class="navbar-item" href="{{ path('app_work_experience') }}">
+                Experiencia Laboral
+            </a>
+            <a class="navbar-item" href="{{ path('app_work_experience') }}">
+                Habilidades
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                        About
+                    </a>
+                    <a class="navbar-item">
+                        Jobs
+                    </a>
+                    <a class="navbar-item">
+                        Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                        Report an issue
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <p class="buttons">
+                    <a href="https://github.com/JoseGonzalez84" target="_blank" class="button">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>JoseGonzalez84</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jose-gonzalez-silva/" target="_blank" class="button is-link">
+                        <span class="icon">
+                          <i class="fa-brands fa-linkedin "></i>
+                        </span>
+                        <span>Mi LinkedIn</span>
+                    </a>
+                    <a href="https://t.me/jsx_freakk" target="_blank" class="button is-link">
+                        <span class="icon">
+                          <i class="fa-brands fa-telegram "></i>
+                        </span>
+                        <span>Escribeme</span>
+                    </a>
+                    <a href="https://open.spotify.com/user/11143436407?si=d59b5d9e6789492f" target="_blank" class="button is-success">
+                        <span class="icon">
+                          <i class="fa-brands fa-spotify "></i>
+                        </span>
+                        <span>Que escucho</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,36 @@
+{# templates/experience/work.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ section_title }}{% endblock %}
+{% block body %}
+    <div class="block p-4">
+        <div class="columns">
+            <div class="column is-three-quarters">
+        {% for experience in experience_list %}
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>{{ experience.title }}</strong>
+                                    <br>
+                                    <strong>{{ experience.company }}</strong> <small>{{ experience.companyLink }}</small> <small>{{ experience.fromTo }}</small>
+                                    <br>
+                                    {{ experience.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+        {% endfor %}
+            </div>
+            <div class="column">
+                {{ include('bio.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
