@@ -17,6 +17,9 @@ class WorkExperienceController extends AbstractController
                 'section_title' => 'Experiencia Laboral',
                 'section_subtitle' => 'Aqui se detalla toda mi vida profesional.',
                 'experience_list' => $this->getExperiences(),
+                'chartDataPoints' => '[{"label"=>"Chrome", "y"=>64.02}, {"label"=>"Firefox", "y"=>12.55}]',
+                'charTitle' => 'Navegadores',
+                'chartSubtitle' => 'Fechas',
             ]
         );
     }

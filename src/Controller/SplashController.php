@@ -12,9 +12,7 @@ class SplashController extends AbstractController
     public function index(): Response
     {
         return $this->render('splash/index.html.twig', [
-            'controller_name' => 'SplashController',
-            'section_title' => 'Inicio',
-            'section_subtitle' => 'Inicio',
+            'controller_name' => 'SplashController'
         ]);
     }
 }

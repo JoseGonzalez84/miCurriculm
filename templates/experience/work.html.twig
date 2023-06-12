@@ -29,6 +29,7 @@
         {% endfor %}
             </div>
             <div class="column">
+                {{ include('chart.html.twig', {'dataPoints': chartDataPoints, 'title': charTitle, 'subtitle': chartSubtitle}) }}
                 {{ include('bio.html.twig') }}
             </div>
         </div>

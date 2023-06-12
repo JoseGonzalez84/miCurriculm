@@ -1,0 +1,21 @@
+<script>
+    window.onload = function() {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            title: {
+                text: {{ title }}
+            },
+            subtitles: [{
+                text: {{ subtitle }}
+            }],
+            data: [{
+                type: "pie",
+                yValueFormatString: "#,##0.00\"%\"",
+                indexLabel: "{label} ({y})",
+                dataPoints: {{ chartDataPoints }}
+            }]
+        });
+        chart.render();
+
+    }
+</script>

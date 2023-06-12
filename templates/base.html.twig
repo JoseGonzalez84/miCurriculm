@@ -10,11 +10,15 @@
 
         {% block javascripts %}
             <script src="https://kit.fontawesome.com/3f787ec5e9.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
         {% endblock %}
     </head>
     <body>
-        {{ include('menu.html.twig') }}
+    {{ include('menu.html.twig') }}
+    {% if section_title is defined and section_subtitle is defined %}
         {{ include('section.html.twig', { 'section_title': section_title, 'section_subtitle': section_subtitle}) }}
-        {% block body %}{% endblock %}
+    {% endif %}
+
+    {% block body %}{% endblock %}
     </body>
 </html>
