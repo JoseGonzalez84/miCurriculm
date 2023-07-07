@@ -10,17 +10,45 @@
                     <article class="media">
                         <div class="media-left">
                             <figure class="image is-64x64">
-                                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                                {% if experience.companyLogo is not defined %}
+                                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="No Logo" />
+                                {% else %}
+                                    <img src="{{ experience.companyLogo }}" alt="Company Logo" />
+                                {% endif %}
                             </figure>
                         </div>
                         <div class="media-content">
                             <div class="content">
                                 <p>
-                                    <strong>{{ experience.title }}</strong>
-                                    <br>
-                                    <strong>{{ experience.company }}</strong> <small>{{ experience.companyLink }}</small> <small>{{ experience.fromTo }}</small>
-                                    <br>
-                                    {{ experience.description }}
+                                    <strong class="title">{{ experience.title }}</strong>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-industry"></i>&nbsp;<strong>{{ experience.company }}</strong>&nbsp;<a class="fa-solid fa-up-right-from-square" href="{{ experience.companyLink }}"></a>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-timeline"></i>&nbsp;Desde <small>{{ experience.fromTo.from }}</small> a <small>{{ experience.fromTo.to }}</small>
+                                </p>
+                                <p>
+                                    <i class="fa-regular fa-file-lines"></i>&nbsp;{{ experience.description }}
+                                </p>
+                                    {% if experience.headTechnologies is defined %}
+                                        {% set technologies = experience.headTechnologies %}
+                                    <p>
+                                        <i class="fa-solid fa-laptop-code"></i>&nbsp;Tecnologías&nbsp;
+                                        {% for technology in technologies %}
+                                            <span class="tag is-info is-rounded">{{ technology }}</span>
+                                        {% endfor %}
+                                    </p>
+                                    {% endif %}
+                                    {% if experience.headSkills is defined %}
+                                        {% set skills = experience.headSkills %}
+                                    <p>
+                                        <i class="fa-solid fa-user-astronaut"></i>&nbsp;Habilidades&nbsp;
+                                        {% for skill in skills %}
+                                            <span class="tag is-success is-rounded">{{ skill }}</span>
+                                        {% endfor %}
+                                    </p>
+                                    {% endif %}
                                 </p>
                             </div>
                         </div>
