@@ -11,7 +11,7 @@ class SplashController extends AbstractController
     #[Route('/', name: 'app_splash')]
     public function index(): Response
     {
-        return $this->render('splash/index.html.twig', [
+        return $this->render('splash/education.html.twig', [
             'controller_name' => 'SplashController'
         ]);
     }

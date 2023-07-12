@@ -1,0 +1,6 @@
+article.experience .company-logo,
+article.study .company-logo {
+    width: 120px;
+    opacity: .7;
+    float: right;
+}

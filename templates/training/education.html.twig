@@ -1,0 +1,73 @@
+{# templates/training/education.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ section_title }}{% endblock %}
+{% block body %}
+    <div class="block p-4">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                {% for study in studies_list %}
+                    <div class="box">
+                        <article class="study media">
+                            <div class="media-content">
+                                <figure class="image is-64x64 company-logo">
+                                    {% if study.college.logo is not defined %}
+                                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="No Logo" />
+                                    {% else %}
+                                        <img src="{{ study.college.logo }}" alt="Site Logo" />
+                                    {% endif %}
+                                </figure>
+                                <div class="content">
+                                    <p class="title">
+                                        <strong class="study-degree has-text-success-dark">{{ study.degree }}</strong>
+                                        {% if study.level is defined and study.level is not empty %}
+                                        &nbsp;<strong class="study-level has-text-primary-dark">{{ study.level }}</strong>
+                                        {% endif %}
+                                        <br>
+                                        <strong class="has-text-grey-dark">{{ study.title }}</strong>
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-industry"></i>&nbsp;<strong>{{ study.college.name }}</strong>&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp;<strong>{{ study.college.location }}</strong>
+                                        <a class="fa-solid fa-up-right-from-square" href="{{ study.college.link }}"></a>
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-timeline"></i>&nbsp;Desde <strong>{{ study.fromTo.from }}</strong> a <strong>{{ study.fromTo.to }}</strong>
+                                    {% if study.fromTo.finished is defined and study.fromTo.finished == false %}
+                                        <span class="has-text-danger">&nbsp;<i class="fa-solid fa-clock"></i>&nbsp;No finalizado</span>
+                                    {% endif %}
+                                    {% if study.rating is not empty %}
+                                        <span class="has-text-success"><i class="fa-solid fa-star"></i>&nbsp;Nota final: <strong class="has-text-success">{{ study.rating }}</strong></span>
+                                    {% endif %}
+                                    </p>
+
+                                    {% if study.data is not empty %}
+                                    <p style="text-align: justify">
+                                        <i class="fa-regular fa-file-lines"></i>&nbsp;{{ study.data }}
+                                    </p>
+                                    {% endif %}
+                                    {% if study.headTechnologies is defined %}
+                                        {% set technologies = study.headTechnologies %}
+                                        <p>
+                                            <i class="fa-solid fa-laptop-code"></i>&nbsp;Tecnologías&nbsp;
+                                            {% for technology in technologies %}
+                                                <span class="tag is-info is-rounded">{{ technology }}</span>
+                                            {% endfor %}
+                                        </p>
+                                    {% endif %}
+                                    {% if study.headSkills is defined %}
+                                        {% set skills = study.headSkills %}
+                                        <p>
+                                            <i class="fa-solid fa-user-astronaut"></i>&nbsp;Habilidades&nbsp;
+                                            {% for skill in skills %}
+                                                <span class="tag is-success is-rounded">{{ skill }}</span>
+                                            {% endfor %}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

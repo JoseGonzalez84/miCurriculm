@@ -11,7 +11,7 @@ class SkillsController extends AbstractController
     #[Route('/skills', name: 'app_skills')]
     public function index(): Response
     {
-        return $this->render('skills/index.html.twig', [
+        return $this->render('skills/education.html.twig', [
             'controller_name' => 'SkillsController',
         ]);
     }

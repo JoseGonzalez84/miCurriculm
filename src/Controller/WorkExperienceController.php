@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WorkExperienceController extends AbstractController
 {
-    #[Route('/work/experience', name: 'app_work_experience')]
+    #[Route('/experience', name: 'app_work_experience')]
     public function index(): Response
     {
         return $this->render(
@@ -41,27 +41,39 @@ a jQuery y en algunas ocasiones con librería React. Cuando me centraba en la pa
 se trabajaba con PHP y Perl. Utilizaba tecnologías de desarrollo como Docker y GitLab. La
 empresa al estar en Madrid, trabajé 100% en modalidad remota.',
                 'headTechnologies' => ['PHP', 'Perl', 'JavaScript'],
-                'headSkills' => ['Backend', 'Frontend', 'Maitenance', 'New features', 'Full Remote']
+                'headSkills' => ['Backend', 'Frontend', 'Code maitenance', 'New features', 'Full Remote']
             ],
             [
                 'title' => 'Desarrollador .NET',
                 'company' => 'Everis',
                 'companyLink' => 'https://es.nttdata.com/',
+                'companyLogo' => 'img/companies/everis.jfif',
                 'fromTo' => [
                     'from' => 'Septiembre de 2018',
                     'to' => 'Junio de 2019'
                 ],
-                'description' => 'Mis jefes eran poco simpaticos',
+                'description' => 'Trabajaba para cliente externo en el que principalmente, utilizaban tecnologías .NET. Realizaba
+el mantenimiento de aplicaciones corporativas de uso en oficinas (C# y VB.NET) y también del
+mantenimiento y mejora de la web comercial (ASP.Net y JavaScript Vanilla). Para el control de
+versiones utilizaba SVN. Realizaba teletrabajo 1 día a la semana.',
+                'headTechnologies' => ['C#', 'VisualBasic.NET', 'ASP.NET', 'SQL Server', 'SVN'],
+                'headSkills' => ['Backend', 'Code maitenance', 'Version Control']
             ],
             [
-                'title' => 'Picateclas Jr',
-                'company' => 'Artica ST',
+                'title' => 'Desarrollador Web',
+                'company' => 'Atramentum',
                 'companyLink' => 'https://www.linkedin.com/company/atramentum-sl/',
+                'companyLogo' => 'img/companies/atramentum.jfif',
                 'fromTo' => [
                     'from' => 'Julio de 2017',
                     'to' => 'Septiembre de 2018'
                 ],
-                'description' => 'Mucho escribir pero poco producir',
+                'description' => 'El principal proyecto era el desarrollo, mejora y resolución de bugs de la página web comercial
+de la empresa, que estaba desarrollada bajo PHP 7.4 y JavaScript bajo jQuery. Introducimos
+justo a mi llegada el control de versiones con GitHub. Participé en el mantenimiento del ERP de
+desarrollo propio, para resolución de bugs del producto.',
+                'headTechnologies' => ['PHP', 'JavaScript', 'MySQL', 'GitHub'],
+                'headSkills' => ['Backend', 'Frontend', 'Code maitenance', 'SQL Queries', 'Version Control']
             ]
         ];
     }
